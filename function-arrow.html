@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*isi nama variable dan masukkan parameternya 1, 2 atau mau memasukan rest parameter juga bisa ...data juga boleh*/
+      const sayHello = (name) => {
+        const say = `hello ${name}`;
+        console.info(say);
+      };
+
+      sayHello("Gibran");
+      sayHello("el");
+      sayHello("ibrahim");
+      // arrow function ga beda jauh dengan anonymous function.
+
+      // contoh arrow function tanpa block
+      const sayHallo = (names) => console.info(`hallo ${names}`);
+      sayHallo("my name is gibran");
+
+      // contoh arrow function return value
+      const sum = (first, second) => first + second;
+      console.info(sum(100, 100));
+
+      // contoh arrow function sebagai parameter
+      function giveMeName(callBack) {
+        callBack("gibran");
+      }
+      /* versi anonymous function
+      giveMeName(function(name){
+        console.info(`hello ${name}`)
+      })
+      */
+
+      // versi arrow function lebih simple tanpa parameter () juga tidak perlu, jika data function single.
+      giveMeName((name) => console.info(`hii ${name}`));
+    </script>
+  </body>
+</html>

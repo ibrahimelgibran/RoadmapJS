@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Global scope
+      let counter = 0;
+
+      // Global scope
+      function hitMe() {
+        // local scope hitMe
+        counter++;
+      }
+      hitMe();
+      hitMe();
+      hitMe();
+
+      // akses global scope
+      console.info(counter);
+
+      // contoh loacal scope
+      function first() {
+        // local scope first
+        let firstVariable = "First";
+        /* console.info(first) contoh bisa diakses tapi lewat local scopenya langsung*/
+      }
+
+      function second() {
+        // loacl scope second
+        let secondVariable = "Second";
+      }
+
+      first(); // eror karna belum dikasih console
+      second();
+
+      /* ini eror karna akses di global scope
+      console.info(firstVariable);
+      console.info(secondVariable);
+      */
+
+      // contoh nestedVariable
+      function gibran() {
+        let gibranVariable = "Gibran";
+
+        function gibranNested() {
+          console.info(gibranVariable);
+        }
+        gibranNested();
+      }
+    </script>
+  </body>
+</html>

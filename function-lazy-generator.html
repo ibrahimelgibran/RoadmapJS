@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // contoh pakai yang lazy generator ganjil
+      function* iniGanjil(value) {
+        for (let i = 1; i <= value; i++) {
+          if (i % 2 === 1) {
+            console.info(`yield ${i}`);
+            yield i;
+          }
+        }
+      }
+      const bilanganGanjil = iniGanjil(50);
+      for (const nomer of bilanganGanjil) {
+        console.info(nomer);
+      }
+
+      // contoh pakai yang eager generator ganjil pakai array
+      function iniGanjilArray(value) {
+        const result = [];
+        for (let i = 1; i <= value; i++) {
+          if (1 % 2 === 1) {
+            console.info(`yield ${i}`);
+            result.push(i);
+          }
+        }
+        return result;
+      }
+
+      const jumlahAngka = iniGanjilArray(50); // untuk cek bisa disini sesuaikan nama functionnya.
+      for (const jumlah of jumlahAngka) {
+        console.info(jumlah);
+      }
+    </script>
+  </body>
+</html>

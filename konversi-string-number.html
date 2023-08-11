@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const value1 = parseInt("1");
+      const value2 = 1;
+      const sum = value1 + value2;
+      document.writeln(`<p>${sum}</p>`);
+
+      document.writeln(`<p>${parseInt("1.1")}</p>`); // konversi bilangan bulat, bilangan belakang akan diabaikan
+      document.writeln(`<p>${parseFloat("1.1")}</p>`); // bilangan pecahan apapun bisa
+      document.writeln(`<p>${Number("1.1")}</p>`); // bisa flaksible
+
+      // konversi number menjadi stirng
+      const a = 1;
+      const b = 1;
+      const total = a.toString() + b.toString();
+      document.writeln(`<p>${total}</p>`);
+
+      // Nan (not a number)
+      document.writeln(`<p>${parseInt("salah")}</p>`);
+      document.writeln(`<p>${parseFloat("1.1gibran")}</p>`);
+
+      document.writeln(`<p>${Number("1.1gibran")}</p>`);
+      document.writeln(`<p>${Number("1.1")}</p>`);
+
+      // konversi string menjadi number (Nan)
+      const benar = Number("10");
+      const jumlahNumber = benar + 100;
+      document.writeln(`<p>${jumlahNumber}</p>`); //benar
+
+      const first = Number("salah");
+      const totalNumber = first + 100;
+      document.writeln(`<p>${totalNumber}</p>`); //salah
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // debugger untuk mencari bug
+      function createFullName(firstName, middleName, lastName) {
+        debugger; // untuk mengetahui bug
+        const fullname = `${firstName} ${lastName} ${lastName}`; // bug dibagain tengah property seharusnya middleName.
+        return fullname;
+      }
+      const name = createFullName(`ibrahim`, `el`, `gibran`);
+      console.info(name);
+
+      function sum(...numbers) {
+        debugger; // untuk mengetahui bug
+        let total = 0;
+        for (const number of numbers) {
+          total = number; // bug ada disini kurang tanda += agar hasil 5 tidak 1.
+        }
+        return total;
+      }
+      console.info(sum(1, 1, 1, 1, 1));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // operator OR
+      console.info("hello" || "");
+      console.info("" || []);
+      console.info("0" || "NOL");
+      console.info(0 || "NOL");
+      console.info(null || "NULL");
+      console.info(undefined || "UNDERFIEND");
+      console.info(0 || false);
+
+      // contoh penggunaan dari operator OR di non boolean
+      const person = {
+        firstName: "ibrahim",
+        lastName: "elgibran",
+      };
+
+      const name = person.firstName || person.lastName;
+      console.info(name);
+
+      // operator AND
+      console.info("hello" && "");
+      console.info("" && []);
+      console.info("0" && "NOL");
+      console.info(0 && "NOL");
+      console.info(null && "NULL");
+      console.info(undefined && "UNDERFIEND");
+      console.info("undefiend" && "null");
+    </script>
+  </body>
+</html>

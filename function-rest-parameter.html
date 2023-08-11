@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // rest parameter array
+      function sum(name, ...data) {
+        let total = 0;
+        for (const item of data) {
+          total += item;
+        }
+        document.write(`<p>total is ${name} is ${total}</p>`);
+      }
+
+      sum("semangka", 10, 20, 30, 40, 50);
+      sum("durian", 20, 10, 50, 60, 50);
+      sum("apple", 30, 80, 30, 40, 50);
+
+      /* bisa menambahkan atau mengirim array 
+      pakai spread syntax di rest parameter */
+      const value = [12, 32, 17, 90, 60];
+      sum("test", ...value);
+    </script>
+  </body>
+</html>

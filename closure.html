@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // closure adalah kombinasi function dan bundel referensi ke data sekitar.
+      function createAdder(value) {
+        const owner = "Gibran";
+
+        function add(param) {
+          console.info(owner);
+          return value + param;
+        }
+        return add; // mengeluarkan funcion add ke luar global scope.
+      }
+
+      const addTwo = createAdder(2);
+      console.info(addTwo(10));
+      console.info(addTwo(20));
+
+      const addTen = createAdder(10);
+      console.info(addTen(10));
+      console.info(addTen(20));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const name = ["ibrahim", "el", "gibran", "berti", "odil"];
+      const [firstNama, middleName, lastName, ...others] = name;
+
+      console.info(firstNama);
+      console.info(middleName);
+      console.info(lastName);
+      console.info(others);
+
+      // contoh mengambil data di object
+      const person = {
+        firstName: "ibrahim",
+        lastNama: "gibran",
+        address: {
+          street: "monjali",
+          city: "sleman",
+          country: "indonesia",
+        },
+        hobbi: "coding",
+        citacita: "sukses",
+      };
+
+      // bisa panggil menggunakan nama property
+      const { firstName, lastNama, address, ...other } = person;
+      console.info(firstName);
+      console.info(lastNama);
+      console.info(address);
+      console.info(other);
+
+      {
+        // contoh destructuring nested object
+        const person = {
+          firstName: "el",
+          lastNama: "gibran",
+          address: {
+            street: "monjali",
+            city: "sleman",
+            country: "indonesia",
+          },
+          hobbi: "coding",
+          citacita: "sukses",
+        };
+
+        // bisa menambahkan properti lagi didalam {} contohnya seperti ini
+        const {
+          firstName,
+          lastNama,
+          address: { street, city, country },
+          ...other
+        } = person;
+
+        console.info(firstName);
+        console.info(lastNama);
+        console.info(street);
+        console.info(city);
+        console.info(country);
+        console.info(other);
+      }
+
+      {
+        // destructuring di function parameter
+        function displayPerson({ firstName, middleName, lastName }) {
+          console.info(firstName);
+          console.info(middleName);
+          console.info(lastName);
+        }
+        const person = {
+          firstName: "ibrahim",
+          middleName: "el",
+          lastName: "gibran",
+        };
+
+        displayPerson(person);
+      }
+
+      {
+        // destructuring di function parameter array
+        function sum([first, second]) {
+          return first + second;
+        }
+        console.info(sum([1, 1]));
+        console.info(sum([10, 10]));
+      }
+
+      {
+        // default value destructuring array
+        const person = ["ibrahim", "gibran"]; // kalo semisal objek ditambah nama berbeda dia akan memakai dan mengganti data yang keberlanjutannya.
+        const [firstName, middleName = "el", lastName = "gibran"] = person;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+
+      {
+        // default value destructuring object
+        const person = {
+          firstName: "ibrahim",
+          lastNama: "gibran",
+        };
+
+        const { firstName, middleName = "el", lastName } = person;
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastNama);
+      }
+
+      {
+        // menggunakan nama variable lain
+        const person = {
+          firstName: "ibrahim",
+          middleName: "gibran", // bisa pakai default value asalkan ini dihapus dan tampilkan di let = property.
+          lastName: "el",
+        };
+        let {
+          firstName: namaDepan,
+          middleName: namaTengah = "ibrahim", // bisa ditambahkan dsini propertynya untuk middleName.
+          lastName: namaBelakang,
+        } = person;
+
+        console.info(namaDepan);
+        console.info(namaTengah);
+        console.info(namaBelakang);
+      }
+    </script>
+  </body>
+</html>

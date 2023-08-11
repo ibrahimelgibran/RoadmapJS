@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*gatter dan setter adalah kemampuan membuat function
+        yang berbeda untuk mengambil data itu (gatter), sedangkan merubah data itu (setter)
+        pada sebuah propery diobjek.
+        */
+
+      // ini contoh getter
+      const person = {
+        firstName: "el",
+        lastName: "Gibaran",
+        get fullName() {
+          return `${this.firstName} ${this.lastName}`;
+        },
+      };
+      person.firstName = "ibrahim";
+      console.info(person.fullName);
+
+      // ini contoh setter
+      const personal = {
+        firstNama: "El",
+        lastNama: "gibran17",
+        get fullNama() {
+          return `${this.firstNama} ${this.lastNama}`;
+        },
+        set fullNama(value) {
+          const array = value.split(" ");
+          this.firstNama = array[0];
+          this.lastNama = array[1];
+        },
+      };
+
+      person.fullNama = "Ibrahim el gibran";
+      console.table(person);
+    </script>
+  </body>
+</html>

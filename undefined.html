@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // undefined adalah suatu variable / data yang belum di definisikan isinya
+      // undefined adalah variable belum ditambahkan value apapun
+      /*let name;
+        if(name === undefined){
+            conosle.info("UNDEFINED");
+        } else{
+            console.info("DEFINED");
+        } */
+
+      // undefiend arry value
+      const names = ["ibrahim", "gibran"];
+      if (names[2] === undefined) {
+        console.info("arry undefined");
+      } else {
+        console.info("arry defined");
+      }
+
+      // undefiend object property
+      const person = {
+        name: "gibran",
+      };
+      if (person.name === undefined) {
+        console.info("object undefined");
+      } else {
+        console.info("object defined");
+      }
+    </script>
+  </body>
+</html>

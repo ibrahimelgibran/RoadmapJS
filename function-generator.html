@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function generator harus pakai tanda bintang * sesudah function dan dilanjut nama functionnya.
+      // mengembalikan tiap data literasi menggunakan yield datanya
+      function* createNames() {
+        yield "ibrahim";
+        yield "el";
+        yield "gibran";
+      }
+
+      const names = createNames();
+      for (const name of names) {
+        console.info(name);
+      }
+
+      // conoth function generator kompleks
+      function* buatGanjil(value) {
+        for (let i = 1; i <= value; i++) {
+          if (i % 2 === 1) {
+            yield i;
+          }
+        }
+      }
+
+      const angkaGanjil = buatGanjil(100);
+      for (const number of angkaGanjil) {
+        console.info(number);
+      }
+    </script>
+  </body>
+</html>
